@@ -1,0 +1,59 @@
+                           *** Virtual DOM ***
+
+Que: What is a DOM?
+
+Ans: Document Object Model. When our website is rendered, it is rendered because
+ of our index.html.
+  Our inde.html file looks like 
+
+  <html>
+  <header>Header</header>
+  <body>There can have  div, h1 etc etc. Inside div we can have p, img, a, href 
+  etc tags</body>
+
+  </html>
+
+Now our JS doesn't understand the raw html code. So our BROWSER do one thing,
+ it creates a DOM tree, of this HTML (With the Data structure of TREE)
+
+                            HTML
+                             |
+ ------------------------------------------------------------
+ |                                                          |
+Head                                                       Body
+                                                            |
+                                                -------------------------
+                                                |           |           |
+                                               div         h1          div
+                                                |
+                                        ------------------
+                                        |       |        |
+                                        p      img       a
+
+
+
+These are all nodes connected on this DOM tree. Now for example in my p tag 
+there was a h1 tag in which it is written "hi" and i need to change it to "hello".
+Now in JS i have to give every node an id for eg 'p'
+and use it as document.getElementById('p') or by classname or by name, then I 
+can change the inner text from "hi" to "hello".
+
+Now, if i have to change just this small text i need to re-render the whole 
+website, which is not a good practice specially for a big e-com apps.
+It causes performance issues.
+
+So, to overcome this issue VIRTUAL DOM has been encounted as the saviour.
+Now by using this I just have tp re-render that particular node which needs 
+to be changed and not the whole website.
+
+React will create a Virtual DOM (Copy of the main DOM), and when the state 
+updates it creates another DOM tree and compare the Virtual DOM with that 
+tree, and re-renders only that node which seem chnaged, and DO NOT RE-PAINT 
+OR RE-RENDER THE ENTIRE TREE.
+
+This process is called RECONCILLIATION -> by using DIFFING ALGORITHM
+
+Que : What is DIFFING Algo?
+Ans : Algo which is to find the difference between both the Trees. Created by
+     React Devs which checks where exactly the difference. Can have multiple locs
+     of changes.

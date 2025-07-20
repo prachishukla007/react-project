@@ -2,6 +2,23 @@
   text-align: center;
 }
 
+.h1 {
+  color: #fff;
+}
+
+.pd-8px {
+  margin: 8px;
+}
+
+.bg-color-grey {
+  background-color: gray;
+}
+
+.red {
+  background-color: red;
+
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
